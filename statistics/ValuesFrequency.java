@@ -16,7 +16,6 @@
 
 package statistics;
 
-import static java.lang.Double.parseDouble;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
@@ -165,10 +164,36 @@ public class ValuesFrequency implements FrequencyInterface{
      * @param myValues
      * @return List String of Categories for qualitative variables
      */
-        @Override
+    @Override
     public List<String> qualitativeVariableClass(List<String> myValues)
     {
         List<String> myListOfCategories = new ArrayList();
+        Iterator myIterator = myValues.iterator();
+        boolean canBeAdded = false;
+        
+        //Obtiene el primer elemento
+        myListOfCategories.add(myValues.get(0));
+        
+        while(myIterator.hasNext()){
+            
+            String addValue = myIterator.next().toString();
+            for(int i= 0; i < myListOfCategories.size(); i++)
+            {
+                if (!addValue.equals(myListOfCategories.get(i)))
+                {
+                    canBeAdded = true;
+                }
+                else
+                {
+                    canBeAdded = false;
+                    break;
+                }
+            }
+            
+            if (canBeAdded == true)
+                myListOfCategories.add(addValue);
+            
+        }
         
         return myListOfCategories;
     }
@@ -180,12 +205,28 @@ public class ValuesFrequency implements FrequencyInterface{
      * @param myValues
      * @return Frequency of a qualitative variable
      */
-        @Override
+    @Override
     public List<Integer> qualitativeVariableFrequency(List<String> myValues)
     {
-        List<Integer> myFrequency = new ArrayList();
+        List<Integer> myfrequency = new ArrayList();
+        List<String> myCategories = qualitativeVariableClass(myValues);
         
-        return myFrequency;
+        for(int i = 0; i < myCategories.size(); i++)
+        {    
+            int contador = 0;
+            
+            for (String myValue : myValues) {
+                String comparator = myValue;
+                if( comparator == myCategories.get(i))
+                {
+                        contador++;
+                }
+            }
+            myfrequency.add(contador);
+            
+        }
+        
+        return myfrequency;
     }
     
 }
