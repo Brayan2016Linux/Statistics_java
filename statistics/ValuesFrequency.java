@@ -111,10 +111,10 @@ public class ValuesFrequency implements FrequencyInterface{
      *
      * @param myValues
      * @param classNumber
-     * @return cuantitative variable Value
+     * @return quantitative variable Value
      */
     @Override
-    public List<Integer> cuantitativeVariableFrequency(List<Double> myValues, int classNumber) {
+    public List<Integer> quantitativeVariableFrequency(List<Double> myValues, int classNumber) {
         List<Integer> myfrequency = new ArrayList();
         
         List<Double> linfC = inferiorLimitClass(myValues, classNumber);
@@ -157,5 +157,35 @@ public class ValuesFrequency implements FrequencyInterface{
         return Double.parseDouble(myNumber);    
     }
     
+    
+    //Devuelve los valores de las categorías de variables cualitativas
+
+    /**
+     *
+     * @param myValues
+     * @return List String of Categories for qualitative variables
+     */
+        @Override
+    public List<String> qualitativeVariableClass(List<String> myValues)
+    {
+        List<String> myListOfCategories = new ArrayList();
+        
+        return myListOfCategories;
+    }
+    
+    //Devuelve la frecuencia de las variables cualitativas
+
+    /**
+     *
+     * @param myValues
+     * @return Frequency of a qualitative variable
+     */
+        @Override
+    public List<Integer> qualitativeVariableFrequency(List<String> myValues)
+    {
+        List<Integer> myFrequency = new ArrayList();
+        
+        return myFrequency;
+    }
     
 }

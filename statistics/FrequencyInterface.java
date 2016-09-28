@@ -26,8 +26,14 @@ public interface FrequencyInterface {
     public abstract List<Double> superiorLimitClass(List<Double> myValues, int classNumber);
     
     //Devuelve los valores de la frecuencia de una variable cuantitativa
-    public abstract List<Integer> cuantitativeVariableFrequency(List<Double> myValues, int classNumber);
+    public abstract List<Integer> quantitativeVariableFrequency(List<Double> myValues, int classNumber);
     
     //Devuelve los valores de los limites superiores de una clase
     public abstract Double classRange(List<Double> myValues, int classNumber);
+    
+    //Devuelve los valores de las categorías de variables cualitativas
+    public abstract List<String> qualitativeVariableClass(List<String> myValues);
+    
+    //Devuelve la frecuencia de las variables cualitativas
+    public abstract List<Integer> qualitativeVariableFrequency(List<String> myValues);
 }
