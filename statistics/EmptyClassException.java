@@ -3,7 +3,7 @@
  * @text Interface de Measures, incluye los elementos básicos de la clase
  * @text como ponderación, media, mediana, moda, recorrido, recorrido
  * @text intercuartílico, percentil, desviación estándar, etc.
- * @text Desarrollado a partir del  20 de setiembre de 2016
+ * @text Desarrollado a partir del  27 de setiembre de 2016
  *
  */
 
@@ -15,13 +15,13 @@
  */
 
 package statistics;
-//Cuando el arreglo de datos es 0, devuelve una excepción
-public class EmptyArrayException extends RuntimeException
+//Cuando el intervalo de clase es 0, devuelve una excepción
+public class EmptyClassException extends RuntimeException
 {
     /**
      * Construct this exception object.
      */
-    public EmptyArrayException( )
+    public EmptyClassException( )
     {
         super( );
     }
@@ -29,7 +29,7 @@ public class EmptyArrayException extends RuntimeException
      * Construct this exception object.
      * @param message the error message.
      */
-    public EmptyArrayException( String message )
+    public EmptyClassException( String message )
     {
         super( message );
     }

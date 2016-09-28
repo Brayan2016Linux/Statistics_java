@@ -1,6 +1,6 @@
 /**
  * @title Statistical Measure Interface
- * @text Interface de Measures, incluye los elementos básicos de la clase
+ * @text Statistical_Java, incluye los elementos básicos de la clase
  * @text como ponderación, media, mediana, moda, recorrido, recorrido
  * @text intercuartílico, percentil, desviación estándar, etc.
  * @text Desarrollado a partir del  20 de setiembre de 2016

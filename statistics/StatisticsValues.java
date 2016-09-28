@@ -1,6 +1,6 @@
 /**
  * @title Statistical Measure Interface
- * @text Interface de Measures, incluye los elementos básicos de la clase
+ * @text Statistical_Java, incluye los elementos básicos de la clase
  * @text como ponderación, media, mediana, moda, recorrido, recorrido
  * @text intercuartílico, percentil, desviación estándar, etc.
  * @text Desarrollado a partir del  20 de setiembre de 2016
@@ -25,6 +25,28 @@ import java.util.List;
 
 public class StatisticsValues extends StatisticalMeasure {
     
+    //
+    private final int precisionDecimals; 
+    
+    //Constructor por defecto
+    public StatisticsValues() {
+        precisionDecimals = 3;
+    }
+    
+    //Constructor precisión dada por el usuario
+    public StatisticsValues(int precision) {
+        precisionDecimals = precision;
+    }
+    
+    //Devuelve el string con el formato para DecimalFormat
+    private String stringDecimalFormat(int precision){
+        String myprecision = "0.";
+        
+        for(int i = 0; i < precision; i++)
+            myprecision += "0";
+        
+        return myprecision;
+    }
      /**
      *
      * @param value
@@ -32,7 +54,7 @@ public class StatisticsValues extends StatisticalMeasure {
      */
     public Double formatNumber(Double value){ 
         try{
-            NumberFormat myformatter = new DecimalFormat("0.000");
+            NumberFormat myformatter = new DecimalFormat(stringDecimalFormat(precisionDecimals));
             return parseDouble(myformatter.format(value));
         }
         catch(NumberFormatException myException){

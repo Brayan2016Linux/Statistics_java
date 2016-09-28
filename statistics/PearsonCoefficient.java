@@ -1,8 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @title PearsonCoefficient Interface
+ * @text Statistical_Java, incluye los elementos básicos de la clase
+ * @text como ponderación, media, mediana, moda, recorrido, recorrido
+ * @text intercuartílico, percentil, desviación estándar, etc.
+ * @text Desarrollado a partir del  20 de setiembre de 2016
+ *
  */
+
+/**
+ *
+ * @author Brayan Rodríguez
+ * @version 1.0
+ * 
+ */
+
 package statistics;
 
 import static java.lang.Double.parseDouble;
@@ -10,10 +21,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- *
- * @author bradrd
- */
 public class PearsonCoefficient implements PearsonCoefficientInterface {
     
     private final StatisticsValues statisticsValues;
