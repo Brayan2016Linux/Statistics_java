@@ -124,7 +124,7 @@ public class ValuesFrequency implements FrequencyInterface{
             double inferiorLimit = linfC.get(i);
             double superiorLimit = lsupC.get(i);
             
-            int contador = 0;
+            int count = 0;
             
             for (Double myValue : myValues) {
                 double comparator = myValue;
@@ -132,11 +132,11 @@ public class ValuesFrequency implements FrequencyInterface{
                 {
                     if(comparator < superiorLimit)
                     {
-                        contador++;
+                        count++;
                     }
                 }
             }
-            myfrequency.add(contador);
+            myfrequency.add(count);
             
         }
         
