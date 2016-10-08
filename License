@@ -1,75 +1,70 @@
+Java Statistics Analysis Library 1.0
+Copyright (c) Brayan Rodriguez (Imagine Cube Lab)
 
-Statistics Analysis Library (for Java and Python) - Terms and conditions
+*** END USER LICENSE AGREEMENT ***
 
-Preamble: 
-This Agreement, signed on Oct 7, 2016 governs the relationship between Brayan Rodriguez (Researcher and Developer, Co-Founder) and Imagine Cube Lab, a Business Entity, with a private person or company as user about this code, libraries and binaries files or compiled softwares. 
-This Agreement sets the terms, rights, restrictions and obligations on using Statistics Analysis created and owned by Licensor, as detailed herein
+IMPORTANT: PLEASE READ THIS LICENSE CAREFULLY BEFORE USING THIS SOFTWARE.
 
-1.License Grant: 
-Licensor hereby grants Licensee a Personal, Non-assignable & non-transferable, Pepetual, Non-commercial, Without the rights to create derivative works, Non-exclusive license, all with accordance with the terms set forth and other legal restrictions set forth in 3rd party software used while running Software.
+1. LICENSE
 
-Limited: Licensee may use Software for the purpose of:
-            Running Software on Licensee’s Website[s] and Server[s];
-            Allowing 3rd Parties to run Software on Licensee’s Website[s] and Server[s];
-            Publishing Software’s output to Licensee and 3rd Parties;
-            Distribute verbatim copies of Software’s output (including compiled binaries);
-            Modify Software to suit Licensee’s needs and specifications.
-This license is granted perpetually, as long as you do not materially breach it.
+By receiving, opening the file package, and/or using Java Statistics Analysis Library 1.0("Software") containing this software, you agree that this End User User License Agreement(EULA) is a legally binding and valid contract and agree to be bound by it. You agree to abide by the intellectual property laws and all of the terms and conditions of this Agreement.
 
-2.Binary Restricted: Licensee may sublicense Software as a part of a larger work containing more than Software, distributed solely in Object or Binary form under a personal, non-sublicensable, limited license. Such redistribution shall be limited to unlimited codebases.
+Unless you have a different license agreement signed by Brayan Rodriguez (Imagine Cube Lab) your use of Java Statistics Analysis Library 1.0 indicates your acceptance of this license agreement and warranty.
 
-3.Non Assignable & Non-Transferable: Licensee may not assign or transfer his rights and duties under this license.
+Subject to the terms of this Agreement, Brayan Rodriguez (Imagine Cube Lab) grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to use Java Statistics Analysis Library 1.0 in accordance with this Agreement and any other written agreement with Brayan Rodriguez (Imagine Cube Lab). Brayan Rodriguez (Imagine Cube Lab) does not transfer the title of Java Statistics Analysis Library 1.0 to you; the license granted to you is not a sale. This agreement is a binding legal agreement between Brayan Rodriguez (Imagine Cube Lab) and the purchasers or users of Java Statistics Analysis Library 1.0.
 
-4.Non-Commercial: Licensee may not use Software for commercial purposes. for the purpose of this license, commercial purposes means that a 3rd party has to pay in order to access Software or that the Website that runs Software is behind a paywall. 
+If you do not agree to be bound by this agreement, remove Java Statistics Analysis Library 1.0 from your computer now and, if applicable, promptly return to Brayan Rodriguez (Imagine Cube Lab) by mail any copies of Java Statistics Analysis Library 1.0 and related documentation and packaging in your possession.
 
-5.Term & Termination: 
-The Term of this license shall be until terminated. Licensor may terminate this Agreement, including Licensee’s license in the case where Licensee :
+2. DISTRIBUTION
 
-5.1 became insolvent or otherwise entered into any liquidation process; or
+Java Statistics Analysis Library 1.0 and the license herein granted shall not be copied, shared, distributed, re-sold, offered for re-sale, transferred or sub-licensed in whole or in part except that you may make one copy for archive purposes only. For information about redistribution of Java Statistics Analysis Library 1.0 contact Brayan Rodriguez (Imagine Cube Lab).
 
-5.2 exported The Software to any jurisdiction where licensor may not enforce his rights under this agreements in; or
+3. USER AGREEMENT
 
-5.3 Licensee was in breach of any of this license's terms and conditions and such breach was not cured, immediately upon notification; or
+3.1 Use
 
-5.4 Licensee in breach of any of the terms of clause 2 to this license; or
+Your license to use Java Statistics Analysis Library 1.0 is limited to the number of licenses purchased by you. You shall not allow others to use, copy or evaluate copies of Java Statistics Analysis Library 1.0.
 
-5.5 Licensee otherwise entered into any arrangement which caused Licensor to be unable to enforce his rights under this License.
+3.2 Use Restrictions
 
-6.Payment: 
-In consideration of the License granted under clause 2, Licensee shall pay Licensor a fee, via Credit-Card, PayPal or any other mean which Licensor may deem adequate. Failure to perform payment shall construe as material breach of this Agreement.
+You shall use Java Statistics Analysis Library 1.0 in compliance with all applicable laws and not for any unlawful purpose. Without limiting the foregoing, use, display or distribution of Java Statistics Analysis Library 1.0 together with material that is pornographic, racist, vulgar, obscene, defamatory, libelous, abusive, promoting hatred, discriminating or displaying prejudice based on religion, ethnic heritage, race, sexual orientation or age is strictly prohibited.
 
-7. Upgrades, Updates and Fixes: 
-Licensor may provide Licensee, from time to time, with Upgrades, Updates or Fixes, as detailed herein and according to his sole discretion. Licensee hereby warrants to keep The Software up-to-date and install all relevant updates and fixes, and may, at his sole discretion, purchase upgrades, according to the rates set by Licensor. Licensor shall provide any update or Fix free of charge; however, nothing in this Agreement shall require Licensor to provide Updates or Fixes.
+Each licensed copy of Java Statistics Analysis Library 1.0 may be used on one single computer location by one user. Use of Java Statistics Analysis Library 1.0 means that you have loaded, installed, or run Java Statistics Analysis Library 1.0 on a computer or similar device. If you install Java Statistics Analysis Library 1.0 onto a multi-user platform, server or network, each and every individual user of Java Statistics Analysis Library 1.0 must be licensed separately.
 
-7.1.Upgrades: for the purpose of this license, an Upgrade shall be a material amendment in The Software, which contains new features and or major performance improvements and shall be marked as a new version number. For example, should Licensee purchase The Software under version 1.X.X, an upgrade shall commence under number 2.0.0.
+You may make one copy of Java Statistics Analysis Library 1.0 for backup purposes, providing you only have one copy installed on one computer being used by one person. Other users may not use your copy of Java Statistics Analysis Library 1.0 . The assignment, sublicense, networking, sale, or distribution of copies of Java Statistics Analysis Library 1.0 are strictly forbidden without the prior written consent of Brayan Rodriguez (Imagine Cube Lab). It is a violation of this agreement to assign, sell, share, loan, rent, lease, borrow, network or transfer the use of Java Statistics Analysis Library 1.0. If any person other than yourself uses Java Statistics Analysis Library 1.0 registered in your name, regardless of whether it is at the same time or different times, then this agreement is being violated and you are responsible for that violation!
 
-7.2.Updates: for the purpose of this license, an update shall be a minor amendment in The Software, which may contain new features or minor improvements and shall be marked as a new sub-version number. For example, should Licensee purchase The Software under version 1.1.X, an upgrade shall commence under number 1.2.0.
+3.3 Copyright Restriction
 
-7.3.Fix: for the purpose of this license, a fix shall be a minor amendment in The Software, intended to remove bugs or alter minor features which impair the The Software's functionality. A fix shall be marked as a new sub-sub-version number. For example, should Licensee purchase Software under version 1.1.1, an upgrade shall commence under number 1.1.2.
+This Software contains copyrighted material, trade secrets and other proprietary material. You shall not, and shall not attempt to, modify, reverse engineer, disassemble or decompile Java Statistics Analysis Library 1.0. Nor can you create any derivative works or other works that are based upon or derived from Java Statistics Analysis Library 1.0 in whole or in part.
 
-7.4.Support: Software is provided under an AS-IS basis and without any support, updates or maintenance. Nothing in this Agreement shall require Licensor to provide Licensee with support or fixes to any bug, failure, mis-performance or other defect in The Software.
+Brayan Rodriguez (Imagine Cube Lab)'s name, logo and graphics file that represents Java Statistics Analysis Library 1.0 shall not be used in any way to promote products developed with Java Statistics Analysis Library 1.0 . Brayan Rodriguez (Imagine Cube Lab) retains sole and exclusive ownership of all right, title and interest in and to Java Statistics Analysis Library 1.0 and all Intellectual Property rights relating thereto.
 
-8.Bug Notification: 
-Licensee may provide Licensor of details regarding any bug, defect or failure in The Software promptly and with no delay from such event; Licensee shall comply with Licensor's request for information regarding bugs, defects or failures and furnish him with information, screenshots and try to reproduce such bugs, defects or failures.
+Copyright law and international copyright treaty provisions protect all parts of Java Statistics Analysis Library 1.0, products and services. No program, code, part, image, audio sample, or text may be copied or used in any way by the user except as intended within the bounds of the single user program. All rights not expressly granted hereunder are reserved for Brayan Rodriguez (Imagine Cube Lab).
 
-9.Feature Request: 
-Licensee may request additional features in Software, provided, however, that (i) Licensee shall waive any claim or right in such feature should feature be developed by Licensor; (ii) Licensee shall be prohibited from developing the feature, or disclose such feature request, or feature, to any 3rd party directly competing with Licensor or any 3rd party which may be, following the development of such feature, in direct competition with Licensor; (iii) Licensee warrants that feature does not infringe any 3rd party patent, trademark, trade-secret or any other intellectual property right; and (iv) Licensee developed, envisioned or created the feature solely by himself.
+3.4 Limitation of Responsibility
 
-10.Liability:  
-To the extent permitted under Law, The Software is provided under an AS-IS basis. Licensor shall never, and without any limit, be liable for any damage, cost, expense or any other payment incurred by Licensee as a result of Software’s actions, failure, bugs and/or any other interaction between The Software  and Licensee’s end-equipment, computers, other software or any 3rd party, end-equipment, computer or services.  Moreover, Licensor shall never be liable for any defect in source code written by Licensee when relying on The Software or using The Software’s source code.
+You will indemnify, hold harmless, and defend Brayan Rodriguez (Imagine Cube Lab) , its employees, agents and distributors against any and all claims, proceedings, demand and costs resulting from or in any way connected with your use of Brayan Rodriguez (Imagine Cube Lab)'s Software.
 
-11.Warranty:  
+In no event (including, without limitation, in the event of negligence) will Brayan Rodriguez (Imagine Cube Lab) , its employees, agents or distributors be liable for any consequential, incidental, indirect, special or punitive damages whatsoever (including, without limitation, damages for loss of profits, loss of use, business interruption, loss of information or data, or pecuniary loss), in connection with or arising out of or related to this Agreement, Java Statistics Analysis Library 1.0 or the use or inability to use Java Statistics Analysis Library 1.0 or the furnishing, performance or use of any other matters hereunder whether based upon contract, tort or any other theory including negligence.
 
-11.1. Intellectual Property: Licensor hereby warrants that The Software does not violate or infringe any 3rd party claims in regards to intellectual property, patents and/or trademarks and that to the best of its knowledge no legal action has been taken against it for any infringement or violation of any 3rd party intellectual property rights.
+Brayan Rodriguez (Imagine Cube Lab)'s entire liability, without exception, is limited to the customers' reimbursement of the purchase price of the Software (maximum being the lesser of the amount paid by you and the suggested retail price as listed by Brayan Rodriguez (Imagine Cube Lab) ) in exchange for the return of the product, all copies, registration papers and manuals, and all materials that constitute a transfer of license from the customer back to Brayan Rodriguez (Imagine Cube Lab).
 
-11.2 No-Warranty: The Software is provided without any warranty; Licensor hereby disclaims any warranty that The Software shall be error free, without defects or code which may cause damage to Licensee’s computers or to Licensee, and that Software shall be functional. Licensee shall be solely liable to any damage, defect or loss incurred as a result of operating software and undertake the risks contained in running The Software on License’s Server[s] and Website[s].
+3.5 Warranties
 
-11.3 Prior Inspection: Licensee hereby states that he inspected The Software thoroughly and found it satisfactory and adequate to his needs, that it does not interfere with his regular operation and that it does meet the standards and scope of his computer systems and architecture. Licensee found that The Software interacts with his development, website and server environment and that it does not infringe any of End User License Agreement of any software Licensee may use in performing his services. Licensee hereby waives any claims regarding The Software's incompatibility, performance, results and features, and warrants that he inspected the The Software.
+Except as expressly stated in writing, Brayan Rodriguez (Imagine Cube Lab) makes no representation or warranties in respect of this Software and expressly excludes all other warranties, expressed or implied, oral or written, including, without limitation, any implied warranties of merchantable quality or fitness for a particular purpose.
 
-11.4 No Refunds: Licensee warrants that he inspected The Software according to clause 7(c) and that it is adequate to his needs. Accordingly, as The Software is intangible goods, Licensee shall not be, ever, entitled to any refund, rebate, compensation or restitution for any reason whatsoever, even if The Software contains material flaws.
+3.6 Governing Law
 
-11.5 Indemnification: Licensee hereby warrants to hold Licensor harmless and indemnify Licensor for any lawsuit brought against it in regards to Licensee’s use of The Software in means that violate, breach or otherwise circumvent this license, Licensor's intellectual property rights or Licensor's title in The Software. Licensor shall promptly notify Licensee in case of such legal action and request Licensee’s consent prior to any settlement in relation to such lawsuit or claim.
+This Agreement shall be governed by the law of the Costa Rica applicable therein. You hereby irrevocably attorn and submit to the non-exclusive jurisdiction of the courts of Costa Rica therefrom. If any provision shall be considered unlawful, void or otherwise unenforceable, then that provision shall be deemed severable from this License and not affect the validity and enforceability of any other provisions.
 
-11.6 Governing Law, Jurisdiction: Licensee hereby agrees not to initiate class-action lawsuits against Licensor in relation to this license and to compensate Licensor for any legal fees, cost or attorney fees should any claim brought by Licensee against Licensor be denied, in part or in full. 
+3.7 Termination
 
+Any failure to comply with the terms and conditions of this Agreement will result in automatic and immediate termination of this license. Upon termination of this license granted herein for any reason, you agree to immediately cease use of Java Statistics Analysis Library 1.0 and destroy all copies of Java Statistics Analysis Library 1.0 supplied under this Agreement. The financial obligations incurred by you shall survive the expiration or termination of this license.
 
+4. DISCLAIMER OF WARRANTY
+
+THIS SOFTWARE AND THE ACCOMPANYING FILES ARE SOLD "AS IS" AND WITHOUT WARRANTIES AS TO PERFORMANCE OR MERCHANTABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED OR IMPLIED. THIS DISCLAIMER CONCERNS ALL FILES GENERATED AND EDITED BY Java Statistics Analysis Library 1.0 AS WELL.
+
+5. CONSENT OF USE OF DATA
+
+You agree that Brayan Rodriguez (Imagine Cube Lab) may collect and use information gathered in any manner as part of the product support services provided to you, if any, related to Java Statistics Analysis Library 1.0.Brayan Rodriguez (Imagine Cube Lab) may also use this information to provide notices to you which may be of use or interest to you.
