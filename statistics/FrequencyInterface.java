@@ -1,3 +1,12 @@
+/*******************************************************
+ * Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
+ * 
+ * This file is part of Java Statistics.
+ * 
+ * Java Statistics can not be copied and/or distributed without the express
+ * permission of Brayan Rodriguez and Imagine Cube Lab
+ *******************************************************/
+
 /**
  * @title Frecuency Interface
  * @text Statistical_Java, incluye los elementos básicos de la clase
