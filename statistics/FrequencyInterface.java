@@ -1,12 +1,3 @@
-/*******************************************************
- * Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
- * 
- * This file is part of Java Statistics.
- * 
- * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
- *******************************************************/
-
 /**
  * @title Frecuency Interface
  * @text Statistical_Java, incluye los elementos básicos de la clase
@@ -16,12 +7,14 @@
  *
  */
 
-/**
- *
- * @author Brayan Rodríguez
- * @version 1.0
+/*******************************************************
+ * Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
  * 
- */
+ * This file is part of Java Statistics.
+ * 
+ * Java Statistics can not be copied and/or distributed without the express
+ * permission of Brayan Rodriguez and Imagine Cube Lab
+ *******************************************************/
 
 package statistics;
 
@@ -45,4 +38,28 @@ public interface FrequencyInterface {
     
     //Devuelve la frecuencia de las variables cualitativas
     public abstract List<Integer> qualitativeVariableFrequency(List<String> myValues);
+    
+    //Devuelve la matriz de contingencia
+    public abstract Integer[][] contingencyMatrixFrequency(List<String> firstVariable, List<String> secondVariable);
+    
+    //Devuelve los totales de las suma de las filas
+    public abstract List<Integer> sumOfRowsContingencyMatrix(Integer[][] contingencyMatrix);
+    
+    //Devuelve los totales de las suma de las columnas
+    public abstract List<Integer> sumOfColumnsContingencyMatrix(Integer[][] contingencyMatrix);
+    
+    //Devuelve la tabla chi-cuadrado de una tabla de contingencia
+    public abstract Double[][] squareChiIndexContingencyMatrix(List<String> firstVariable, List<String> secondVariable);
+    
+    //Devuelve el índice chi-cuadrado de una tabla de contingencia
+    public abstract Double squareChiIndexContingency(List<String> firstVariable, List<String> secondVariable);
+    
+    //Devuelve el coeficiente de Pearson de una tabla de contingencia
+    public abstract Double pearsonCoefficientOfContingency(List<String> firstVariable, List<String> secondVariable);
+    
+    //Devuelve el coeficiente de Chuprov de una tabla de contingencia
+    public abstract Double chuprovCoefficientOfContingency(List<String> firstVariable, List<String> secondVariable);
+    
+    //Devuelve el coeficiente de asociación entre variable cualitativa y cuantitativa
+    public abstract Double independenceCorrelationIndex(List<Double> quantitativeV, List<String> qualitativeV);
 }

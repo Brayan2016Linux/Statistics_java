@@ -1,3 +1,12 @@
+/**
+ * @title Statistical Measure Interface
+ * @text Statistical_Java, incluye los elementos básicos de la clase
+ * @text como ponderación, media, mediana, moda, recorrido, recorrido
+ * @text intercuartílico, percentil, desviación estándar, etc.
+ * @text Desarrollado a partir del  20 de setiembre de 2016
+ * @text 01/oct/2016 10/oct/2016
+ */
+
 /*******************************************************
  * Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
  * 
@@ -6,22 +15,6 @@
  * Java Statistics can not be copied and/or distributed without the express
  * permission of Brayan Rodriguez and Imagine Cube Lab
  *******************************************************/
-
-/**
- * @title Statistical Measure Interface
- * @text Statistical_Java, incluye los elementos básicos de la clase
- * @text como ponderación, media, mediana, moda, recorrido, recorrido
- * @text intercuartílico, percentil, desviación estándar, etc.
- * @text Desarrollado a partir del  20 de setiembre de 2016
- *
- */
-
-/**
- *
- * @author Brayan Rodríguez
- * @version 1.0
- * 
- */
 
 package statistics;
 
@@ -72,12 +65,37 @@ public class StatisticsValues extends StatisticalMeasure {
         }
     }
     
+    /**
+     *
+     * @param value
+     * @return format number two decimals
+     */
+    public Double formatNumber(Double value, int precision){ 
+        try{
+            NumberFormat myformatter = new DecimalFormat(stringDecimalFormat(precision));
+            return parseDouble(myformatter.format(value));
+        }
+        catch(NumberFormatException myException){
+            System.err.println("Warning: " + "Empty array or list!");
+            return parseDouble("0.0");
+        }
+    }
+    
      /**
      *
      * @param value
      * @return square of the number
      */
-    private Double squareNumber(Double value){
+    public Double squareNumber(Double value){
+        return value * value;
+    }
+    
+     /**
+     *
+     * @param value
+     * @return square of the number
+     */
+    public Integer squareNumber(Integer value){
         return value * value;
     }
     
@@ -89,7 +107,7 @@ public class StatisticsValues extends StatisticalMeasure {
     private Double[] listToArray(List<Double> myValues){
         Double[] aux = new Double[myValues.size()];
         int i = 0;
-        Iterator myIterator= myValues.iterator();
+        Iterator<Double> myIterator= myValues.iterator();
         
         while(myIterator.hasNext()){
             aux[i] = parseDouble(myIterator.next().toString());
@@ -104,7 +122,7 @@ public class StatisticsValues extends StatisticalMeasure {
      * @return List<Double>
      */
     private List<Double> arrayToList(Double[] myArray){
-        List<Double> aux = new ArrayList();
+        List<Double> aux = new ArrayList<>();
         for(int i = 0; i < myArray.length; i++)
             aux.add(myArray[i]);      
         return aux;
@@ -147,7 +165,7 @@ public class StatisticsValues extends StatisticalMeasure {
         double factorSlope = (percentileIndex - beforePosition) / (afterPosition - beforePosition);
         //IntervalRange
         double intervalRange = orderedValues(aux).get(afterPosition - 1) - orderedValues(aux).get(beforePosition - 1);
-        double percentile = formatNumber(orderedValues(aux).get(beforePosition - 1) + factorSlope * intervalRange);
+        double percentile = orderedValues(aux).get(beforePosition - 1) + factorSlope * intervalRange;
         return percentile;
     }
     
@@ -249,7 +267,7 @@ public class StatisticsValues extends StatisticalMeasure {
     {
         Double sum = sumValuesX(myValues);
         int sampleSize = myValues.size();
-        return formatNumber((double) sum / sampleSize);
+        return (double) sum / sampleSize;
     }
    
     /**
@@ -264,7 +282,7 @@ public class StatisticsValues extends StatisticalMeasure {
         while (myIterator.hasNext()){
             sum = sum + Double.parseDouble(myIterator.next().toString());
         }  
-        return formatNumber(sum);
+        return sum;
     }
     
 
@@ -276,7 +294,7 @@ public class StatisticsValues extends StatisticalMeasure {
         @Override
     public Double sumSquareValuesX(List<Double> myValues) {
        Double sum = 0.0;
-        Iterator myIterator = myValues.iterator();
+        Iterator<Double> myIterator = myValues.iterator();
         while (myIterator.hasNext()){
             sum = sum + squareNumber(Double.parseDouble(myIterator.next().toString()));
         }  
@@ -297,9 +315,9 @@ public class StatisticsValues extends StatisticalMeasure {
         
         Double weightedSum = 0.0;
         Double sumOfWeights = 0.0;
-        List<Double> WeightedList = new ArrayList();
+        List<Double> WeightedList = new ArrayList<>();
         
-        Iterator myIterator = weights.iterator();
+        Iterator<Double> myIterator = weights.iterator();
         
         while (myIterator.hasNext())
         {
@@ -316,7 +334,34 @@ public class StatisticsValues extends StatisticalMeasure {
             weightedSum = weightedSum + parseDouble(myValuesIterator.next().toString());
         }
         
-        return formatNumber(weightedSum / sumOfWeights);
+        return weightedSum / sumOfWeights;
+    }
+    
+    /**
+     *
+     * @param myValues
+     * @param weights
+     * @return weighted Mean
+     */
+    @Override
+    public Double weightedVariance(List<Double> myValues, List<Double> weights)
+    {
+        Double weightedMean = weightedMean(myValues, weights);
+        Double sumOfWeightedSquareValues = 0.0;
+        List<Double> WeightedList = new ArrayList<>();
+        
+        for(int i = 0; i < myValues.size(); i++){
+                WeightedList.add(squareNumber(myValues.get(i)) * weights.get(i));
+        }
+        
+        Iterator<Double> myValuesIterator = WeightedList.iterator();
+        while (myValuesIterator.hasNext())
+        {
+            sumOfWeightedSquareValues = sumOfWeightedSquareValues + parseDouble(myValuesIterator.next().toString());
+        }
+        
+        return sumOfWeightedSquareValues - squareNumber(weightedMean);
+        
     }
 
     /**
@@ -410,7 +455,7 @@ public class StatisticsValues extends StatisticalMeasure {
 
     @Override
     public Double standardDesviationSigma(List<Double> myValues) {
-        return formatNumber(Math.sqrt(varianceValueSigma(myValues)));
+        return Math.sqrt(varianceValueSigma(myValues));
     }
     
     /**
@@ -420,7 +465,7 @@ public class StatisticsValues extends StatisticalMeasure {
      */
     @Override
     public Double standardDesviationNormal(List<Double> myValues) {
-        return formatNumber(Math.sqrt(varianceValueNormal(myValues)));
+        return Math.sqrt(varianceValueNormal(myValues));
     }
 
     /**
@@ -430,7 +475,7 @@ public class StatisticsValues extends StatisticalMeasure {
      */
     @Override
     public Double varianceValueSigma(List<Double> myValues) {
-        return formatNumber(Math.abs(sumSquareValuesX(myValues) / myValues.size() - squareNumber(arithmeticMean(myValues))));
+        return sumSquareValuesX(myValues) / myValues.size() - squareNumber(arithmeticMean(myValues));
     }
     
     /**
@@ -441,8 +486,8 @@ public class StatisticsValues extends StatisticalMeasure {
     @Override
     public Double varianceValueNormal(List<Double> myValues) {
         Double varianceValue = varianceValueSigma(myValues);
-        double correctionFactor = (double) myValues.size() / (double)(myValues.size() - 1);
-        return formatNumber(Math.abs(varianceValue * correctionFactor));
+        double correctionFactor = (double) myValues.size() / (myValues.size() - 1);
+        return varianceValue * correctionFactor;
     }
     
     /**
@@ -452,7 +497,7 @@ public class StatisticsValues extends StatisticalMeasure {
      */
     @Override
     public Double variationCoefficientSigma(List<Double> myValues) {
-        return formatNumber(standardDesviationSigma(myValues) / arithmeticMean(myValues) * 100);
+        return standardDesviationSigma(myValues) / arithmeticMean(myValues) * 100;
     }
     
     /**
@@ -462,7 +507,51 @@ public class StatisticsValues extends StatisticalMeasure {
      */
     @Override
     public Double variationCoefficientNormal(List<Double> myValues) {
-        return formatNumber(standardDesviationNormal(myValues) / arithmeticMean(myValues) * 100);
+        return standardDesviationNormal(myValues) / arithmeticMean(myValues) * 100;
+    }
+    
+    //Normalización de los datos
+    /**
+     * 
+     * @param value
+     * @param average
+     * @param stdDesv
+     * @return normalValue media = 0 and variance = 1
+     */
+    public Double normalizedValue(double value, double average, double stdDesv){
+        return (value - average) / stdDesv;
+    }
+    
+    /**
+     * 
+     * @param quantitativeV
+     * @param average
+     * @param stdDesv
+     * @return normalValue (media = 0 and variance = 1) knowing media and variance of population.
+     */
+    public List<Double> normalizedListOfData(List<Double> quantitativeV, double average, double stdDesv){
+        List<Double> normalizedData = new ArrayList<>();
+        double x_value;
+        Iterator<Double> myIterator = quantitativeV.iterator();
+        while(myIterator.hasNext())
+        {
+            x_value = Double.parseDouble(myIterator.next().toString());
+            normalizedData.add(normalizedValue(x_value, average, stdDesv));
+        }
+        return normalizedData;
+    }
+    
+    /**
+     * 
+     * @param quantitativeV
+     * @return normalValue (media = 0 and variance = 1) with media and variance of sample
+     */
+    public List<Double> normalizedListTStudent(List<Double> quantitativeV){
+        List<Double> normalizedData = new ArrayList<>();
+        double average = arithmeticMean(quantitativeV);
+        double stdDesv = standardDesviationNormal(quantitativeV);
+        normalizedData = normalizedListOfData(quantitativeV, average, stdDesv);
+        return normalizedData;
     }
     
    

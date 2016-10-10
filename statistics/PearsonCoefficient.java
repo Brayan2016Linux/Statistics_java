@@ -1,12 +1,3 @@
-/*******************************************************
- * Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
- * 
- * This file is part of Java Statistics.
- * 
- * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
- *******************************************************/
-
 /**
  * @title PearsonCoefficient Interface
  * @text Statistical_Java, incluye los elementos básicos de la clase
@@ -16,12 +7,14 @@
  *
  */
 
-/**
- *
- * @author Brayan Rodríguez
- * @version 1.0
+/*******************************************************
+ * Copyright (C) 2016-2017 Brayan Rodriguez D. <bradrd2009jp@gmail.com>
  * 
- */
+ * This file is part of Java Statistics.
+ * 
+ * Java Statistics can not be copied and/or distributed without the express
+ * permission of Brayan Rodriguez and Imagine Cube Lab
+ *******************************************************/
 
 package statistics;
 
@@ -110,7 +103,7 @@ public class PearsonCoefficient implements PearsonCoefficientInterface {
     public Double sumValueXY(List<Double> valueX, List<Double> valueY){
         Double SumValueXY = 0.0;
         
-        List<Double> ListProductXY = new ArrayList();
+        List<Double> ListProductXY = new ArrayList<>();
         
         for(int i = 0; i < valueX.size(); i++){
                 ListProductXY.add(valueX.get(i) * valueY.get(i));
