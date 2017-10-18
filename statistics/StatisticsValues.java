@@ -13,9 +13,9 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
-
+ //Last Updated: july 22nd, 2017
 package statistics;
 
 import static java.lang.Double.parseDouble;
@@ -24,8 +24,15 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import exceptions.*;
 
-public class StatisticsValues extends StatisticalMeasure {
+/**
+* @title Class StatisticsValue
+* @text Operations with Statistics Measures
+* @author <bradrd2009jp@gmail.com>
+* @date 2017/22/17
+*/
+public class StatisticsValues extends StatisticalMeasureInterface {
     
     //
     private final int precisionDecimals; 
@@ -49,11 +56,13 @@ public class StatisticsValues extends StatisticalMeasure {
         
         return myprecision;
     }
-     /**
-     *
-     * @param value
-     * @return format number two decimals
-     */
+  /**
+   * @title formatNumber
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param value
+   * @return format number two decimals
+   */
     public Double formatNumber(Double value){ 
         try{
             NumberFormat myformatter = new DecimalFormat(stringDecimalFormat(precisionDecimals));
@@ -65,11 +74,13 @@ public class StatisticsValues extends StatisticalMeasure {
         }
     }
     
-    /**
-     *
-     * @param value
-     * @return format number two decimals
-     */
+  /**
+   * @title formatNumber with precision
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param value
+   * @return format number two decimals
+   */
     public Double formatNumber(Double value, int precision){ 
         try{
             NumberFormat myformatter = new DecimalFormat(stringDecimalFormat(precision));
@@ -81,29 +92,35 @@ public class StatisticsValues extends StatisticalMeasure {
         }
     }
     
-     /**
-     *
-     * @param value
-     * @return square of the number
-     */
+  /**
+   * @title squareNumber Double
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param value
+   * @return square of the number
+   */
     public Double squareNumber(Double value){
         return value * value;
     }
     
-     /**
-     *
-     * @param value
-     * @return square of the number
-     */
+  /**
+   * @title squareNumber Integer
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param value
+   * @return square of the number
+   */
     public Integer squareNumber(Integer value){
         return value * value;
     }
     
-    /**
-     *
-     * @param myValues
-     * @return Double[]
-     */
+  /**
+   * @title listToArray
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Double[]
+   */
     private Double[] listToArray(List<Double> myValues){
         Double[] aux = new Double[myValues.size()];
         int i = 0;
@@ -116,11 +133,13 @@ public class StatisticsValues extends StatisticalMeasure {
         return aux;
     }
     
-    /**
-     *
-     * @param value
-     * @return List<Double>
-     */
+  /**
+   * @title arrayToList
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param value
+   * @return List<Double>
+   */
     private List<Double> arrayToList(Double[] myArray){
         List<Double> aux = new ArrayList<>();
         for(int i = 0; i < myArray.length; i++)
@@ -128,7 +147,13 @@ public class StatisticsValues extends StatisticalMeasure {
         return aux;
     }
     
-    
+  /**
+   * @title orderedValues
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param List<Double> myValues
+   * @return List<Double>
+   */
     public List<Double> orderedValues(List<Double> myValues){
         Double[] aux = listToArray(myValues);
         shellSort(aux);
@@ -169,12 +194,14 @@ public class StatisticsValues extends StatisticalMeasure {
         return percentile;
     }
     
-    /**
-     *
-     * @param myValues
-     * @param position
-     * @return Percentile R6 in m-th position 
-     */
+  /**
+   * @title PercentileR6
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param position
+   * @return Percentile R6 in m-th position 
+   */
     @Override
     public Double PercentileR6(List<Double> myValues, int position){
         double p = (double) position / 100;
@@ -201,12 +228,14 @@ public class StatisticsValues extends StatisticalMeasure {
         }
     }
     
-    /**
-     *
-     * @param myValues
-     * @param position
-     * @return k-th Percentile R-7 Excel type
-     */
+  /**
+   * @title PercentileR7
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param position
+   * @return k-th Percentile R-7 Excel type
+   */
     @Override
     public Double PercentileR7(List<Double> myValues, int position){
         double p = (double) position / 100;
@@ -223,12 +252,14 @@ public class StatisticsValues extends StatisticalMeasure {
         }
     }
     
-    /**
-     *
-     * @param myValues
-     * @param position
-     * @return k-th Percentile R-8 Maple-7 type
-     */
+  /**
+   * @title PercentileR8
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param position
+   * @return k-th Percentile R-8 Maple-7 type
+   */
     @Override
     public Double PercentileR8(List<Double> myValues, int position){
         double p = (double)position / 100;
@@ -257,11 +288,13 @@ public class StatisticsValues extends StatisticalMeasure {
         
     }
     
-    /**
-     *
-     * @param myValues
-     * @return arithmetic Mean
-     */
+  /**
+   * @title arithmeticMean
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return arithmetic Mean
+   */
     @Override
     public Double arithmeticMean(List<Double> myValues)
     {
@@ -270,11 +303,13 @@ public class StatisticsValues extends StatisticalMeasure {
         return (double) sum / sampleSize;
     }
    
-    /**
-     *
-     * @param myValues
-     * @return Sum of all values of array
-     */
+  /**
+   * @title sumValuesX
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Sum of all values of array
+   */
     @Override
     public Double sumValuesX(List<Double> myValues){
         Double sum = 0.0;
@@ -286,12 +321,14 @@ public class StatisticsValues extends StatisticalMeasure {
     }
     
 
-    /**
-     *
-     * @param myValues
-     * @return Sum of all square values of array
-     */
-        @Override
+  /**
+   * @title sumSquareValuesX
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Sum of all square values of array
+   */
+    @Override
     public Double sumSquareValuesX(List<Double> myValues) {
        Double sum = 0.0;
         Iterator<Double> myIterator = myValues.iterator();
@@ -301,12 +338,14 @@ public class StatisticsValues extends StatisticalMeasure {
         return formatNumber(sum);
     }
     
-    /**
-     *
-     * @param myValues
-     * @param weights
-     * @return weighted Mean
-     */
+  /**
+   * @title weightedMean
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param weights
+   * @return weighted Mean
+   */
     @Override
     public Double weightedMean(List<Double> myValues, List<Double> weights) {
         
@@ -337,12 +376,14 @@ public class StatisticsValues extends StatisticalMeasure {
         return weightedSum / sumOfWeights;
     }
     
-    /**
-     *
-     * @param myValues
-     * @param weights
-     * @return weighted Mean
-     */
+  /**
+   * @title weightedVariance
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param weights
+   * @return weighted Mean
+   */
     @Override
     public Double weightedVariance(List<Double> myValues, List<Double> weights)
     {
@@ -364,22 +405,26 @@ public class StatisticsValues extends StatisticalMeasure {
         
     }
 
-    /**
-     *
-     * @param myValues
-     * @return Minimal value of data
-     */
+  /**
+   * @title minValue
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Minimal value of data
+   */
     @Override
     public Double minValue(List<Double> myValues) {
         List<Double> aux = myValues;
         return orderedValues(aux).get(0);
     }
 
-    /**
-     *
-     * @param myValues
-     * @return Maximal value of data
-     */
+  /**
+   * @title maxValue
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Maximal value of data
+   */
     @Override
     public Double maxValue(List<Double> myValues) {
         List<Double> aux = myValues;
@@ -387,41 +432,49 @@ public class StatisticsValues extends StatisticalMeasure {
         return orderedValues(aux).get(lastindex);
     }
 
-    /**
-     *
-     * @param myValues
-     * @return Quartile 1
-     */
+  /**
+   * @title firstQuartile
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Quartile 1
+   */
     @Override
     public Double firstQuartile(List<Double> myValues) {
         return PercentileR7(myValues, 25);
     }
 
-    /**
-     *
-     * @param myValues
-     * @return Quartile 2
-     */
+  /**
+   * @title secondQuartile
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Quartile 2
+   */
     @Override
     public Double secondQuartile(List<Double> myValues) {
          return PercentileR7(myValues, 50);
     }
 
-    /**
-     *
-     * @param myValues
-     * @return Quartile 3
-     */
+  /**
+   * @title thirdQuartile
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Quartile 3
+   */
     @Override
     public Double thirdQuartile(List<Double> myValues) {
        return PercentileR7(myValues, 75);
     }
 
-    /**
-     *
-     * @param myValues
-     * @return Double list with four quartiles
-     */
+  /**
+   * @title quartile list
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Double list with four quartiles
+   */
     @Override
     public List<Double> quartile(List<Double> myValues) {
         List<Double> aux = new ArrayList<>();
@@ -432,57 +485,74 @@ public class StatisticsValues extends StatisticalMeasure {
         return aux;
     }
 
-    /**
-     *
-     * @param myValues
-     * @return Range of data
-     */
+  /**
+   * @title dataRange
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Range of data
+   */
     @Override
     public Double dataRange(List<Double> myValues) {
         return maxValue(myValues) - minValue(myValues);
     }
 
+  /**
+   * @title medianValues
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return secondQuartile
+   */
     @Override
     public Double medianValue(List<Double> myValues) {
         return secondQuartile(myValues);
     }
     
-    /**
-     *
-     * @param myValues
-     * @return standard desviation sigma (n)
-     */
+  /**
+   * @title standardDesviationSigma
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return standard desviation sigma (n)
+   */
 
     @Override
     public Double standardDesviationSigma(List<Double> myValues) {
         return Math.sqrt(varianceValueSigma(myValues));
     }
     
-    /**
-     *
-     * @param myValues
-     * @return normal desviation s (n - 1)
-     */
+  /**
+   * @title standardDesviationNormal
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return normal desviation s (n - 1)
+   */
     @Override
     public Double standardDesviationNormal(List<Double> myValues) {
         return Math.sqrt(varianceValueNormal(myValues));
     }
 
-    /**
-     *
-     * @param myValues
-     * @return variance sigma (n)
-     */
+  /**
+   * @title varianceValueSigma
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return variance sigma (n)
+   */
     @Override
     public Double varianceValueSigma(List<Double> myValues) {
         return sumSquareValuesX(myValues) / myValues.size() - squareNumber(arithmeticMean(myValues));
     }
     
-    /**
-     *
-     * @param myValues
-     * @return normal variance s (n - 1)
-     */
+  /**
+   * @title varianceValueNormal
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return normal variance s (n - 1)
+   */
     @Override
     public Double varianceValueNormal(List<Double> myValues) {
         Double varianceValue = varianceValueSigma(myValues);
@@ -490,45 +560,52 @@ public class StatisticsValues extends StatisticalMeasure {
         return varianceValue * correctionFactor;
     }
     
-    /**
-     *
-     * @param myValues
-     * @return variation coefficient sigma (n)
-     */
+  /**
+   * @title variationCoefficientSigma
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return variation coefficient sigma (n)
+   */
     @Override
     public Double variationCoefficientSigma(List<Double> myValues) {
         return standardDesviationSigma(myValues) / arithmeticMean(myValues) * 100;
     }
     
-    /**
-     *
-     * @param myValues
-     * @return variation coefficient normal (n - 1)
-     */
+  /**
+   * @title variationCoefficientNormal
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return variation coefficient normal (n - 1)
+   */
     @Override
     public Double variationCoefficientNormal(List<Double> myValues) {
         return standardDesviationNormal(myValues) / arithmeticMean(myValues) * 100;
     }
     
-    //Normalización de los datos
-    /**
-     * 
-     * @param value
-     * @param average
-     * @param stdDesv
-     * @return normalValue media = 0 and variance = 1
-     */
+  /**
+   * @title normalizedValue
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param value
+   * @param average
+   * @param stdDesv
+   * @return normalValue media = 0 and variance = 1
+   */
     public Double normalizedValue(double value, double average, double stdDesv){
         return (value - average) / stdDesv;
     }
     
-    /**
-     * 
-     * @param quantitativeV
-     * @param average
-     * @param stdDesv
-     * @return normalValue (media = 0 and variance = 1) knowing media and variance of population.
-     */
+  /**
+   * @title normalizedListOfData
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param quantitativeV
+   * @param average
+   * @param stdDesv
+   * @return normalValue (media = 0 and variance = 1) knowing media and variance of population.
+   */
     public List<Double> normalizedListOfData(List<Double> quantitativeV, double average, double stdDesv){
         List<Double> normalizedData = new ArrayList<>();
         double x_value;
@@ -541,11 +618,13 @@ public class StatisticsValues extends StatisticalMeasure {
         return normalizedData;
     }
     
-    /**
-     * 
-     * @param quantitativeV
-     * @return normalValue (media = 0 and variance = 1) with media and variance of sample
-     */
+  /**
+   * @title normalizedListTStudent
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param quantitativeV
+   * @return normalValue (media = 0 and variance = 1) with media and variance of sample
+   */
     public List<Double> normalizedListTStudent(List<Double> quantitativeV){
         List<Double> normalizedData = new ArrayList<>();
         double average = arithmeticMean(quantitativeV);

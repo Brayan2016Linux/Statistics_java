@@ -3,7 +3,7 @@
  * @text Interface de Measures, incluye los elementos básicos de la clase
  * @text como ponderación, media, mediana, moda, recorrido, recorrido
  * @text intercuartílico, percentil, desviación estándar, etc.
- * @text Desarrollado a partir del  27 de setiembre de 2016
+ * @text Desarrollado a partir del  20 de setiembre de 2016
  *
  */
 
@@ -13,25 +13,33 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
+ //Last Updated july 26, 2017
+ package exceptions;
 
-package statistics;
-//Cuando el intervalo de clase es 0, devuelve una excepción
-public class EmptyClassException extends RuntimeException
+/**
+ * @title DifferentSizeListException
+ * @text Devuelve excepción si las listas son de diferente tamaño
+ * @author <bradrd2009jp@gmail.com>
+ * @date 2017/07/26
+ */ 
+public class DifferentSizeListException extends RuntimeException
 {
     /**
-     * Construct this exception object.
+     * @text Construct this exception object.
      */
-    public EmptyClassException( )
+    public DifferentSizeListException( )
     {
         super( );
     }
     /**
-     * Construct this exception object.
+     * @author <bradrd2009jp@gmail.com>
+     * @text Construct this exception object.
      * @param message the error message.
+     * @date 2017/7/26
      */
-    public EmptyClassException( String message )
+    public DifferentSizeListException( String message )
     {
         super( message );
     }

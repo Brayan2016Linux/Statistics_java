@@ -13,14 +13,19 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
-
+ //Last Updated: july 22nd, 2017
 package statistics;
 
 import java.util.List;
-
-public abstract class StatisticalMeasure {
+/**
+* @title Class StatisticalMeasureInterface
+* @text Prototyping of Statistical measures class
+* @author <bradrd2009jp@gmail.com>
+* @date 2017/22/17
+*/
+public abstract class StatisticalMeasureInterface {
     
     //Devuelve la media de un grupo de datos
     public abstract Double arithmeticMean(List<Double> myValues);

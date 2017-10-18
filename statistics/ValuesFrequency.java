@@ -13,18 +13,26 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
-
+ //Last Updated: Octuber 1, 2017
 package statistics;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
+import matrix.*;
 
+/**
+* @title Class ValuesFrequency
+* @text Operations with Frequency
+* @author <bradrd2009jp@gmail.com>
+* @date 2017/22/17
+*/
 public class ValuesFrequency implements FrequencyInterface{
     
     private final StatisticsValues myStatistics;
+    private final Matrix myMat;
     private final int precisionDecimals;
     private final double asuranceLimitValue;
     private int lastNumberOfRows;
@@ -46,62 +54,12 @@ public class ValuesFrequency implements FrequencyInterface{
     //Devuelve el número total de elementos
     public int totalNumberOfValues(List<Double> myValues){
         return myValues.size();
-    }
-    
-    //devuelve el número de filas de una matriz           
-    public <AnyType extends Comparable<? super AnyType>> 
-        int numberOfRowsMatrix (AnyType[][] myMatrix) {
-            int numberOfRows = 0;
-            
-            if (myMatrix != null)
-            {
-                try{
-                for (int i = 0; i < myMatrix.length; i++)
-                   {
-                    if (myMatrix[i][0] != null)
-                    {
-                        numberOfRows = i + 1;
-                        lastNumberOfRows = numberOfRows;
-                    }
-                    else
-                        break;
-                   }
-                } catch (IndexOutOfBoundsException myException){
-                    return lastNumberOfRows;
-                }
-            }
-            return numberOfRows;
-    }
-        
-    //devuelve el número de columnas de una matriz           
-    public <AnyType extends Comparable<? super AnyType>> 
-        int numberOfColumnsMatrix (AnyType[][] myMatrix) {
-            int numberOfColumns = 0;
-            
-            if (myMatrix != null)
-            {
-                try{
-                for (int j = 0; j < myMatrix.length; j++)
-                   {
-                    if (myMatrix[0][j] != null)
-                        {
-                        numberOfColumns = j + 1;
-                        lastNumberOfColumns = numberOfColumns;
-                    }
-                    else
-                        break;
-                   }
-                } catch (IndexOutOfBoundsException myException){
-                    return lastNumberOfColumns;
-                }
-            }
-            return numberOfColumns;
-    }
-    
+    }    
     
     //Constructor por defecto
     public ValuesFrequency(){
         myStatistics = new StatisticsValues();
+        myMat = new Matrix();
         precisionDecimals = 3;
         asuranceLimitValue = 5 * Math.pow(10, - (precisionDecimals+1));
     }
@@ -109,15 +67,18 @@ public class ValuesFrequency implements FrequencyInterface{
     //Constructor con precisión
     public ValuesFrequency(int precision){
         myStatistics = new StatisticsValues();
+        myMat = new Matrix();
         precisionDecimals = precision;
         asuranceLimitValue = 5 * Math.pow(10, - (precisionDecimals+1));
     }
-    /**
-     *
-     * @param myValues
-     * @param classNumber
-     * @return inferior Limit Class Values according to classNumbers
-     */
+  /**
+   * @title inferiorLimitClass
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param classNumber
+   * @return inferior Limit Class Values according to classNumbers
+   */
     @Override
     public List<Double> inferiorLimitClass(List<Double> myValues, int classNumber) {
         double firstValue = XminValue(myValues);
@@ -125,7 +86,7 @@ public class ValuesFrequency implements FrequencyInterface{
         double addValue = firstValue - asuranceLimitValue;
         
         //Add the first value to list
-        List<Double> myLimitsList = new ArrayList();
+        List<Double> myLimitsList = new ArrayList<Double>();
         
         for(int i = 0; i < classNumber; i++)
         {
@@ -136,12 +97,14 @@ public class ValuesFrequency implements FrequencyInterface{
         return myLimitsList;
     }
 
-    /**
-     *
-     * @param myValues
-     * @param classNumber
-     * @return superior Limit Class Values according to classNumbers
-     */
+  /**
+   * @title superiorLimitClass
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param classNumber
+   * @return superior Limit Class Values according to classNumbers
+   */
     @Override
     public List<Double> superiorLimitClass(List<Double> myValues, int classNumber) {
         double firstValue = XminValue(myValues);
@@ -160,15 +123,17 @@ public class ValuesFrequency implements FrequencyInterface{
         return myLimitsList;
     }
 
-    /**
-     *
-     * @param myValues
-     * @param classNumber
-     * @return quantitative variable Value
-     */
+  /**
+   * @title quantitativeVariableFrequency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param classNumber
+   * @return quantitative variable Value
+   */
     @Override
     public List<Integer> quantitativeVariableFrequency(List<Double> myValues, int classNumber) {
-        List<Integer> myfrequency = new ArrayList();
+        List<Integer> myfrequency = new ArrayList<Integer>();
         
         List<Double> linfC = inferiorLimitClass(myValues, classNumber);
         List<Double> lsupC = superiorLimitClass(myValues, classNumber);
@@ -197,12 +162,14 @@ public class ValuesFrequency implements FrequencyInterface{
         return myfrequency;
     }
 
-    /**
-     *
-     * @param myValues
-     * @param classNumber
-     * @return class Range
-     */
+  /**
+   * @title classRange
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @param classNumber
+   * @return class Range
+   */
     @Override
     public Double classRange(List<Double> myValues, int classNumber) 
     {
@@ -214,15 +181,17 @@ public class ValuesFrequency implements FrequencyInterface{
     
     //Devuelve los valores de las categorías de variables cualitativas
 
-    /**
-     *
-     * @param myValues
-     * @return List String of Categories for qualitative variables
-     */
+  /**
+   * @title qualitativeVariableClass
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return List String of Categories for qualitative variables
+   */
     @Override
     public List<String> qualitativeVariableClass(List<String> myValues)
     {
-        List<String> myListOfCategories = new ArrayList();
+        List<String> myListOfCategories = new ArrayList<String>();
         Iterator<String> myIterator = myValues.iterator();
         boolean canBeAdded = false;
         
@@ -255,11 +224,13 @@ public class ValuesFrequency implements FrequencyInterface{
     
     //Devuelve la frecuencia de las variables cualitativas
 
-    /**
-     *
-     * @param myValues
-     * @return Frequency of a qualitative variable
-     */
+  /**
+   * @title qualitativeVariableFrequency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param myValues
+   * @return Frequency of a qualitative variable
+   */
     @Override
     public List<Integer> qualitativeVariableFrequency(List<String> myValues)
     {
@@ -284,12 +255,14 @@ public class ValuesFrequency implements FrequencyInterface{
         return myfrequency;
     }
     
-     /**
-     *
-     * @param firstVariable
-     * @param secondVariable
-     * @return contingency table values of two qualitative variables sets
-     */
+  /**
+   * @title contingencyMatrixFrequency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param firstVariable
+   * @param secondVariable
+   * @return contingency table values of two qualitative variables sets
+   */
     @Override
     public Integer[][] contingencyMatrixFrequency(List<String> firstVariable, List<String> secondVariable){
         
@@ -326,16 +299,18 @@ public class ValuesFrequency implements FrequencyInterface{
         return contingencyMatrix;
     }
     
-    /**
-     *
-     * @param contingencyMatrix
-     * @return sum of rows of contingency table
-     */
+  /**
+   * @title sumOfRowsContingencyMatrix
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param contingencyMatrix
+   * @return sum of rows of contingency table
+   */
     @Override
     public List<Integer> sumOfRowsContingencyMatrix(Integer [][] contingencyMatrix){
         List<Integer> sumOfRows = new ArrayList<>();
-        int numberofrows = numberOfRowsMatrix(contingencyMatrix);
-        int numberofcolumns = numberOfColumnsMatrix(contingencyMatrix);
+        int numberofrows = myMat.numberOfRowsMatrix(contingencyMatrix);
+        int numberofcolumns = myMat.numberOfColumnsMatrix(contingencyMatrix);
         
         for (int i = 0; i < numberofrows; i++)
         {
@@ -350,18 +325,20 @@ public class ValuesFrequency implements FrequencyInterface{
         return sumOfRows;
     }
     
-    /**
-     *
-     * @param contingencyMatrix
-     * @return sum of columns contingency Matrix
-     */
+  /**
+   * @title sumOfColumnsContingencyMatrix
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param contingencyMatrix
+   * @return sum of columns contingency Matrix
+   */
     
     @Override
     public List<Integer> sumOfColumnsContingencyMatrix(Integer[][] contingencyMatrix)
     {
         List<Integer> sumOfColumns= new ArrayList<>();
-        int numberofrows = numberOfRowsMatrix(contingencyMatrix);
-        int numberofcolumns = numberOfColumnsMatrix(contingencyMatrix);
+        int numberofrows = myMat.numberOfRowsMatrix(contingencyMatrix);
+        int numberofcolumns = myMat.numberOfColumnsMatrix(contingencyMatrix);
         
         for (int j = 0; j < numberofcolumns; j++)
         {
@@ -376,37 +353,41 @@ public class ValuesFrequency implements FrequencyInterface{
         return sumOfColumns;
     }
     
-    /**
-     *
-     * @param firstVariable
-     * @param secondVariable
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title squareChiIndexContingencyMatrix
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param firstVariable
+   * @param secondVariable
+   * @return square chi index contingency Matrix
+   */
     @Override
     public Double[][] squareChiIndexContingencyMatrix(List<String> firstVariable, List<String> secondVariable)
     {
         Integer[][] CMatrix = contingencyMatrixFrequency(firstVariable, secondVariable);
-        Double[][] squareChiValuesMatrix = new Double [numberOfRowsMatrix(CMatrix)][numberOfColumnsMatrix(CMatrix)];
+        Double[][] squareChiValuesMatrix = new Double [myMat.numberOfRowsMatrix(CMatrix)][myMat.numberOfColumnsMatrix(CMatrix)];
         List<Integer> SCj = sumOfColumnsContingencyMatrix(CMatrix);
         List<Integer> SFi = sumOfRowsContingencyMatrix(CMatrix);
         
-        for (int i = 0; i < numberOfRowsMatrix(CMatrix); i++)
-            for (int j = 0; j < numberOfColumnsMatrix(CMatrix); j++)
+        for (int i = 0; i < myMat.numberOfRowsMatrix(CMatrix); i++)
+            for (int j = 0; j < myMat.numberOfColumnsMatrix(CMatrix); j++)
                 squareChiValuesMatrix[i][j] = (double) myStatistics.squareNumber(CMatrix[i][j]) / (SCj.get(j) * SFi.get(i));
         
         return squareChiValuesMatrix;
     }
     
-    /**
-     *
-     * @param ContingencyMatrix
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title squareChiIndexContingencyMatrix
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param ContingencyMatrix
+   * @return square chi index contingency Matrix
+   */
     public Double[][] squareChiIndexContingencyMatrix(Integer[][] ContingencyMatrix)
     {
         Integer[][] CMatrix = ContingencyMatrix;
-        int rows = numberOfRowsMatrix(CMatrix);
-        int columns = numberOfColumnsMatrix(CMatrix);
+        int rows = myMat.numberOfRowsMatrix(CMatrix);
+        int columns = myMat.numberOfColumnsMatrix(CMatrix);
         Double[][] squareChiValuesMatrix = new Double [rows][columns];
         List<Integer> SCj = sumOfColumnsContingencyMatrix(CMatrix);
         List<Integer> SFi = sumOfRowsContingencyMatrix(CMatrix);
@@ -423,12 +404,14 @@ public class ValuesFrequency implements FrequencyInterface{
         return squareChiValuesMatrix;
     }
     
-    /**
-     *
-     * @param firstVariable
-     * @param secondVariable
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title squareChiIndexContingency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param firstVariable
+   * @param secondVariable
+   * @return square chi index contingency Matrix
+   */
     @Override
     public Double squareChiIndexContingency(List<String> firstVariable, List<String> secondVariable)
     {
@@ -437,8 +420,8 @@ public class ValuesFrequency implements FrequencyInterface{
         int N = firstVariable.size();
         Double[][] squareChiIndexCM = squareChiIndexContingencyMatrix(firstVariable, secondVariable);
         
-        for (int i = 0; i < numberOfRowsMatrix(squareChiIndexCM); i++)
-            for (int j = 0; j < numberOfColumnsMatrix(squareChiIndexCM); j++)
+        for (int i = 0; i < myMat.numberOfRowsMatrix(squareChiIndexCM); i++)
+            for (int j = 0; j < myMat.numberOfColumnsMatrix(squareChiIndexCM); j++)
             {
                 sumOfIndexes = sumOfIndexes + squareChiIndexCM[i][j];
             }
@@ -448,6 +431,13 @@ public class ValuesFrequency implements FrequencyInterface{
         return myStatistics.formatNumber(squareChiValue, precisionDecimals);
     }
     
+  /**
+   * @title valueOfNContingencyMatrix
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param contingencyMatrix
+   * @return the sum total values of matrix
+   */
     public Integer valueOfNContingencyMatrix(Integer[][] contingencyMatrix)
     {
         List<Integer> listSumOfColumns = sumOfColumnsContingencyMatrix(contingencyMatrix);
@@ -461,11 +451,13 @@ public class ValuesFrequency implements FrequencyInterface{
         
     }
     
-    /**
-     *
-     * @param ContingencyMatrix
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title squareChiIndexContingency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param ContingencyMatrix
+   * @return square chi index contingency Matrix
+   */
     public Double squareChiIndexContingency(Integer[][] ContingencyMatrix)
     {
         Double squareChiValue;
@@ -473,9 +465,9 @@ public class ValuesFrequency implements FrequencyInterface{
         int N = valueOfNContingencyMatrix(ContingencyMatrix);
         Double[][] squareChiIndexCM = squareChiIndexContingencyMatrix(ContingencyMatrix);
         
-        for (int i = 0; i < numberOfRowsMatrix(squareChiIndexCM); i++)
+        for (int i = 0; i < myMat.numberOfRowsMatrix(squareChiIndexCM); i++)
         {
-            for (int j = 0; j < numberOfColumnsMatrix(squareChiIndexCM); j++)
+            for (int j = 0; j < myMat.numberOfColumnsMatrix(squareChiIndexCM); j++)
             {
                 sumOfIndexes = sumOfIndexes + squareChiIndexCM[i][j];
             }
@@ -487,12 +479,14 @@ public class ValuesFrequency implements FrequencyInterface{
     }
     
     
-    /**
-     *
-     * @param firstVariable
-     * @param secondVariable
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title pearsonCoefficientOfContingency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param firstVariable
+   * @param secondVariable
+   * @return square chi index contingency Matrix
+   */
     @Override
     public Double pearsonCoefficientOfContingency(List<String> firstVariable, List<String> secondVariable)
     {
@@ -504,11 +498,13 @@ public class ValuesFrequency implements FrequencyInterface{
         return myStatistics.formatNumber(pearsonValue, precisionDecimals);
     }
     
-    /**
-     *
-     * @param squareChiValue
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title pearsonCoefficientOfContingency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param squareChiValue
+   * @return square chi index contingency Matrix
+   */
  
     public Double pearsonCoefficientOfContingency(Double squareChiValueIndex, int sumOfAllValueContingencyMatrix)
     {
@@ -519,12 +515,14 @@ public class ValuesFrequency implements FrequencyInterface{
         return myStatistics.formatNumber(pearsonValue, precisionDecimals);
     }
     
-    /**
-     *
-     * @param firstVariable
-     * @param secondVariable
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title chuprovCoefficientOfContingency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param firstVariable
+   * @param secondVariable
+   * @return square chi index contingency Matrix
+   */
     @Override
     public Double chuprovCoefficientOfContingency(List<String> firstVariable, List<String> secondVariable)
     {
@@ -535,13 +533,15 @@ public class ValuesFrequency implements FrequencyInterface{
         return myStatistics.formatNumber(chuprovValue, precisionDecimals);
     }
     
-    /**
-     *
-     * @param pearsonValue
-     * @param numberOfRows
-     * @param numberOfColumns
-     * @return square chi index contingency Matrix
-     */
+  /**
+   * @title chuprovCoefficientOfContingency
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param pearsonValue
+   * @param numberOfRows
+   * @param numberOfColumns
+   * @return square chi index contingency Matrix
+   */
     public Double chuprovCoefficientOfContingency(Double pearsonValue, int numberOfRows, int numberOfColumns)
     {
         double chuprovValue = pearsonValue / ((numberOfRows - 1) * (numberOfColumns - 1));
@@ -549,12 +549,14 @@ public class ValuesFrequency implements FrequencyInterface{
     }
     
     
-    /**
-     *
-     * @param quantitativeV
-     * @param qualitativeV
-     * @return independenceIndexCorrelation
-     */
+  /**
+   * @title independenceCorrelationIndex
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param quantitativeV
+   * @param qualitativeV
+   * @return independenceIndexCorrelation
+   */
     @Override
     public Double independenceCorrelationIndex(List<Double> quantitativeV, List<String> qualitativeV){
         Double correlationIndex;

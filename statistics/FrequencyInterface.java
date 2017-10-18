@@ -13,13 +13,18 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
-
 package statistics;
 
 import java.util.List;
 
+/**
+ * @title FrequencyInterface
+ * @text Define las funciones de Frecuencia
+ * @author <bradrd2009jp@gmail.com>
+ * @date 2016/09/27
+ */
 public interface FrequencyInterface {
     //Devuelve los valores de los limites inferiores de una clase
     public abstract List<Double> inferiorLimitClass(List<Double> myValues, int classNumber);

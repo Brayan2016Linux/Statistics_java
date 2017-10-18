@@ -13,25 +13,33 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
+ //Last Updated october 9, 2017
+ package exceptions;
 
-package statistics;
-//Cuando el arreglo de datos es 0, devuelve una excepción
-public class EmptyArrayException extends RuntimeException
+/**
+ * @title DifferentSizeMatrixException
+ * @text Devuelve excepción si las matrices son de diferente tamaño
+ * @author <bradrd2009jp@gmail.com>
+ * @date 2017/10/9
+ */
+public class DifferentSizeMatrixException extends RuntimeException
 {
     /**
-     * Construct this exception object.
+     * @text Construct this exception object.
      */
-    public EmptyArrayException( )
+    public DifferentSizeMatrixException( )
     {
         super( );
     }
     /**
-     * Construct this exception object.
+     * @author <bradrd2009jp@gmail.com>
+     * @text Construct this exception object.
      * @param message the error message.
+     * @date 2017/10/9
      */
-    public EmptyArrayException( String message )
+    public DifferentSizeMatrixException( String message )
     {
         super( message );
     }

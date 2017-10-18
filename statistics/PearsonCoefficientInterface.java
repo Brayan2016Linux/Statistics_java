@@ -13,14 +13,19 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
-
+ //Last Updated: july 22nd, 2017
 package statistics;
 
 import java.util.List;
 
-
+/**
+* @title Class PearsonCoefficientInterface
+* @text Prototyping of Pearson's Coefficient
+* @author <bradrd2009jp@gmail.com>
+* @date 2017/22/17
+*/
 public interface PearsonCoefficientInterface {
     
     //Devuelve la covarianza entre dos variables Cuantitativas

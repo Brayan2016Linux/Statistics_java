@@ -13,16 +13,21 @@
  * This file is part of Java Statistics.
  * 
  * Java Statistics can not be copied and/or distributed without the express
- * permission of Brayan Rodriguez and Imagine Cube Lab
+ * permission of Brayan Rodriguez
  *******************************************************/
-
+ //Last Updated: july 22nd, 2017
 package statistics;
 
 import static java.lang.Double.parseDouble;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+* @title Class PearsonCoefficient
+* @text Operations with Pearson's Coefficient
+* @author <bradrd2009jp@gmail.com>
+* @date 2017/22/17
+*/
 public class PearsonCoefficient implements PearsonCoefficientInterface {
     
     private final StatisticsValues statisticsValues;
@@ -51,24 +56,28 @@ public class PearsonCoefficient implements PearsonCoefficientInterface {
     {
         return statisticsValues.arithmeticMean(myValues);
     }
-    /**
-     *
-     * @param valueX
-     * @param valueY
-     * @return covariance Value of XY
-     */
+  /**
+   * @title covarianceXY
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param valueX
+   * @param valueY
+   * @return covariance Value of XY
+   */
     @Override
     public Double covarianceXY(List<Double> valueX, List<Double> valueY){
         double covXY = sumValueXY(valueX, valueY) / valueX.size() - arithmeticMean(valueX) * arithmeticMean(valueY);
         return formatNumber(covXY);
     }   
     
-     /**
-     *
-     * @param valueX
-     * @param valueY
-     * @return Pearson coefficient of XY with standard desviation sigma (n)
-     */
+  /**
+   * @title pearsonSigmaXY
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param valueX
+   * @param valueY
+   * @return Pearson coefficient of XY with standard desviation sigma (n)
+   */
     @Override
     public Double pearsonSigmaXY(List<Double> valueX, List<Double> valueY){
         double covXY = covarianceXY(valueX, valueY);
@@ -78,12 +87,14 @@ public class PearsonCoefficient implements PearsonCoefficientInterface {
         return formatNumber(covXY / (sigmaStdDesvX * sigmaStdDesvY));
     }
     
-    /**
-     *
-     * @param valueX
-     * @param valueY
-     * @return Pearson coefficient of XY with standard deviation normal (n-1)
-     */
+  /**
+   * @title pearsonNormalXY
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param valueX
+   * @param valueY
+   * @return Pearson coefficient of XY with standard deviation normal (n-1)
+   */
     @Override
     public Double pearsonNormalXY(List<Double> valueX, List<Double> valueY){
         double covXY = covarianceXY(valueX, valueY);
@@ -93,12 +104,14 @@ public class PearsonCoefficient implements PearsonCoefficientInterface {
         return formatNumber(covXY / (normalStdDesvX * normalStdDesvY));
     }
     
-    /**
-     *
-     * @param valueX
-     * @param valueY
-     * @return Value of Sum of product of XY
-     */
+  /**
+   * @title sumValueXY
+   * @author <bradrd2009jp@gmail.com>
+   * @date 2017/07/22
+   * @param valueX
+   * @param valueY
+   * @return Value of Sum of product of XY
+   */
     @Override
     public Double sumValueXY(List<Double> valueX, List<Double> valueY){
         Double SumValueXY = 0.0;
